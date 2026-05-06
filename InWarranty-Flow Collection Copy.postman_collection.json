@@ -1507,20 +1507,7 @@
               "pm.collectionVariables.set(\"jobNum\",jobNum);\r",
               "pm.collectionVariables.set(\"jobId\",jobId);\r",
               "console.log(jobNum)\r",
-              "console.log(jobId)"
-            ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "exec": [
-              "var random=Math.random();\r",
-              "var imeiNumber=Math.floor(random*10000000000000+10000000000000);\r",
-              "pm.collectionVariables.set(\"imeiNumber\",imeiNumber);\r",
+              "console.log(jobId)\r",
               "\r",
               "pm.test(\"Verify if the status code is 200\",function(){\r",
               "    pm.response.to.have.status(200)\r",
@@ -1606,6 +1593,20 @@
               "pm.test(\"verify job number starts with JOB_\",function(){\r",
               "    pm.expect(pm.response.json().data.job_number.startsWith(\"JOB_\")).to.be.true\r",
               "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "var random=Math.random();\r",
+              "var imeiNumber=Math.floor(random*10000000000000+10000000000000);\r",
+              "pm.collectionVariables.set(\"imeiNumber\",imeiNumber);\r",
+              ""
             ],
             "type": "text/javascript",
             "packages": {},
